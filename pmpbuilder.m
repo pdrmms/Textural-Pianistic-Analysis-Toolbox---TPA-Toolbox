@@ -1,35 +1,37 @@
+% This function builds the list of all existing PMPs. 
+
 clc
-partsbydists; tabe=tabd; %produz "tabd" e "tabs", partições das distribuições (d)/(e), e (s)
+partsbydists; tabe=tabd; %produz "tabd" e "tabs", partiÃ§Ãµes das distribuiÃ§Ãµes (d)/(e), e (s)
 
 rec1={}; rec2={};rec3={};
-% f percorre tabd, que tem partições da mão direita
+% f percorre tabd, que tem partiÃ§Ãµes da mÃ£o direita
 for f = 1:size(tabd,1)
-    pdvez=tabd(f,:); % Partição da mão Direita da Vez
-    % g percorre tabs, que tem partições da distr. sincrônica
+    pdvez=tabd(f,:); % PartiÃ§Ã£o da mÃ£o Direita da Vez
+    % g percorre tabs, que tem partiÃ§Ãµes da distr. sincrÃ´nica
     for g = 1:size(tabs,1)
         psvez=tabs(g,:);
-        % h percorre tabd, que agora tem partições da mão direita (as mesmas)
+        % h percorre tabd, que agora tem partiÃ§Ãµes da mÃ£o direita (as mesmas)
         for h = 1:size(tabe,1)
             pevez=tabe(h,:);
         
-        %monta uma por cima da outra, com mesma dimensão
+        %monta uma por cima da outra, com mesma dimensÃ£o
         pmp = zeros(3,10);      
         pmp(1,1:size(pdvez,2))=pdvez;pmp(2,1:size(psvez,2))=psvez;pmp(3,1:size(pevez,2))=pevez;
         rec1=[rec1;pmp];%para comparar. antes do filtro
-        %esse registro pré-filtragem é apenas para comparar com rec2, que registra após filtragem
+        %esse registro prÃ©-filtragem Ã© apenas para comparar com rec2, que registra apÃ³s filtragem
         
         %agora se iniciam os filtros
         %filtro1 soma maior que 10
         rowsum = sum(pmp,2); if sum(rowsum) > 10; pmp=[]; end
         
-        %filtro2 se (e) e/ou (d) tiver Dn igual a 5, (s) não pode ser
+        %filtro2 se (e) e/ou (d) tiver Dn igual a 5, (s) nÃ£o pode ser
         %>0
-        if 5-rowsum(3) ==0 & rowsum(2) > 0; pmp=[]; end %mão esquerda
-        if 5-rowsum(1) ==0 & rowsum(2) > 0; pmp=[]; end %mão direita
+        if 5-rowsum(3) ==0 & rowsum(2) > 0; pmp=[]; end %mÃ£o esquerda
+        if 5-rowsum(1) ==0 & rowsum(2) > 0; pmp=[]; end %mÃ£o direita
         
-        %filtro3 número de partes em (s) não pode ser maior que a sobra de
-        %cada mão (se a mão direita tem 3 partes, por ex., (s) só pode ter
-        %até 2 partes
+        %filtro3 nÃºmero de partes em (s) nÃ£o pode ser maior que a sobra de
+        %cada mÃ£o (se a mÃ£o direita tem 3 partes, por ex., (s) sÃ³ pode ter
+        %atÃ© 2 partes
         numelD=nnz(pdvez); numelS=nnz(psvez);numelE=nnz(pevez);
         if numelS > 5-numelD | numelS > 5-numelE; pmp=[]; end
         
@@ -38,10 +40,10 @@ for f = 1:size(tabd,1)
         rec2=[rec2;pmp];%para comparar. DEPOIS do filtro
         rec2{:};
         
-        %o bloco abaixo pesa muito. é para codificar classes texturais
+        %o bloco abaixo pesa muito. Ã© para codificar classes texturais
 %            if ~isempty(pmp) 
  %               pmpalt=pmp; 
-  %              pmpalt=LBsubs(pmpalt); %é uma pmp ALTernativa destinada a codificação em classes texturais. gravada em rec3
+  %              pmpalt=LBsubs(pmpalt); %Ã© uma pmp ALTernativa destinada a codificaÃ§Ã£o em classes texturais. gravada em rec3
    %             rec3=[rec3;pmpalt];
             %end
         end
