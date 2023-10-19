@@ -1,4 +1,22 @@
-% This function builds the list of all existing PMPs. 
+% The function "pmpbuilder" builds the list of all existing PMPs.
+% 
+% Usage:
+%           pmpbuilder
+% Example:
+%           pmpbuilder
+% 
+%               ans =
+% 
+%                   [list of 1.126 existing PMPs coded as partitions.
+%                   It was hidden here for the sake of space]
+% 
+% Created in July 2023 under MATLAB 2022 (Mac OS)
+%
+% © Part of Pianistic Textural Analysis Toolbox - PTA Toolbox,
+% Copyright ©2023, Pauxy Gentil Nunes Filho, Pedro Miguel de Moraes
+% PArtiMus Research Group - PPGM-UFRJ
+% See License.txt
+% ==========
 
 clc
 partsbydists; tabe=tabd; %produz "tabd" e "tabs", partições das distribuições (d)/(e), e (s)
