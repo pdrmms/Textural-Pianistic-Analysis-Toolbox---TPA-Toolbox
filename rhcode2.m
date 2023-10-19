@@ -1,7 +1,19 @@
 function rhcode2 = rhcode(lhcode, nline)
-% rhcode2 é uma função que retorna uma lista de possibilidade para a mão 
+
+% % rhcode2 é uma função que retorna uma lista de possibilidade para a mão 
 % direita que se encaixma à linha de lhcode definida pelo 
 % número da linha (nline).
+
+% built-in usage:
+% 
+% Created in July 2023 under MATLAB 2022 (Mac OS)
+%
+% © Part of Pianistic Textural Analysis Toolbox - PTA Toolbox,
+% Copyright ©2023, Pauxy Gentil Nunes Filho, Pedro Miguel de Moraes
+% PArtiMus Research Group - PPGM-UFRJ
+% See License.txt
+% ==========
+
 list = lhcode;
 nfg = 5;% número de dedos igual a cinco.
 af = permn([1 0],nfg); % combinações de zeros e um.
