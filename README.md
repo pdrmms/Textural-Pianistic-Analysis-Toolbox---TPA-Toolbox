@@ -2,6 +2,12 @@
 
 O Textural Pianistic Toolbox é um conjunto de rotinas, funções e dados para Matlab designado para operar e visualizar estruturas texturais pianísticas. Seu desenvolvimento é diretamente ligado à Universidade Federal do Rio de Janeiro.
 
+A presente pesquisa divide esforços em dois objetos de investigação:
+  1) gesto de seleção;
+  2) gesto de excitação.
+
+Essa divisão é oriunda de Claude Cadoz (1988), que divide o tocar pianístico entre (1) escolha das teclas e dedos a serem acionadas, (2) acionamento em si dessas teclas e dedos, e (3) modificação estrutural do som (acionamento dos pedais). A partir dessa divisão, propomos tipologias exaustivas para cada um dessas instâncias, permitindo assim uma metrificação de aspectos do gesto instrumental mais diretamente relacionados a aspectos observáveis na partitura.
+
 Um conceito central da proposta é o que convencionou-se chamar de _partição manual pianística_ (_PMP_). Uma _PMP_ é uma configuração textural (partição rítmica) observada a partir da forma como suas partes encontram-se alocadas nas mãos do pianista em sua performance. Essa alocação, chamada de _distribuição manual pianística_ (_DMP_), pode dar-se em três posições (ou distribuições, como são chamadas):
   1) mão esquerda (distribuição _e_);
   2) mão direita (distribuição _d_);
@@ -31,8 +37,20 @@ As 1.125 PMPs descritas com partições e em classes de distribuição manual pi
 
 ![image](https://github.com/pdrmms/Textural-Pianistic-Analysis-Toolbox---TPA-Toolbox/assets/144931330/94a04133-a30f-4d89-a534-e7861682eb48)
 
-Através da generalização possibilitada pelas classes texturais, é possível classificar as 1.125 PMPs em apenas 79 configurações, apresentadas a seguir a partir do próprio reticulado de classes texturais:
+Através da generalização possibilitada pelas classes texturais, é possível classificar as 1.125 PMPs em apenas 78 configurações, apresentadas a seguir a partir do próprio reticulado de classes texturais:
 
 ![image](https://github.com/pdrmms/Textural-Pianistic-Analysis-Toolbox---TPA-Toolbox/assets/144931330/500d0d87-77ed-446d-b3b6-ad10cf2c0828)
 
-A lista dessas 79 PMPs descritas em tc-space é construída através da função tcbuilderXY.m
+A lista dessas 78 PMPs descritas em tc-space é construída através da função tcbuilderXY.m
+
+Por outro lado, as PMPs podem ser descritas de forma ainda mais detalhada. Isso se dá através da descrição textural rítmica situada na disposição dos componentes no espaço de alturas (registro) proposta por Moreira (2019). Aplicando as thread-words propostas por Moreira, chegamos aos chamados _finger-codes_, que são códigos que descrevem as relações texturais rítmicas entre componentes, e também sua disposição nos dedos específicos de cada mão. No finger-code aaxaa-xbaxc, por exemplo: os dedos 5, 4, 2 e 1 da mão esquerda dedicam-se à parte textural identificada pela pelo código _a_, enquanto o dedo 2 da mão direita dedica-se à realização da parte textural identificada pelo código _b_, enquanto o dedo 3 da mão direita dedica-se a _a_, e o dedo 5 dedica-se a _c_.
+
+Para uma única mão, identificou-se uma lista de 202 finger-codes possíveis. Juntando as duas mãos, chega-se ao estonteante montante de 248.941 finger-codes, listado através da função rhcode.m.
+
+Referências
+
+CADOZ, Claude. Instrumental Gesture and Musical Composition. ICMC 1988 – International Computer Music Conference, Feb 1988, Cologne, Germany. Proceedings..., 1988, Cologne, pp.1-12.
+
+GENTIL-NUNES, Pauxy. Analise Particional: uma mediação entre composição e a Teoria das Partições. Tese – (Doutorado em Música). Centro de Letras e Artes, Universidade Federal do Estado do Rio de Janeiro. Rio de Janeiro, 2009.
+
+MOREIRA, Daniel. Textural Design: A compositional Theory for the Organization of musical Texture. Thesis (Ph.D. in Music). Graduate Program in Music, Center of Letters and Arts, School of Music, Federal University of Rio de Janeiro (UFRJ), 2019.
