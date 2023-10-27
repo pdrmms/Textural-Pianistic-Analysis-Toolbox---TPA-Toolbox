@@ -31,7 +31,7 @@ Observadas como classes, tem-se apenas cinco possibilidades:
 
 Uma vez esgotada a formalização das possibilidades de alocação de conteúdos texturais nas mãos do pianista, parte-se para o inventário desses conteúdos em si. Essa tarefa é realizada através da Análise Particional (Gentil-Nunes, 2009), que fornece a taxonomia exaustiva das configurações texturais para determinada densidade-número (Dn). Considerando uma situação mais básica, em que cada dedo do pianista só aciona uma tecla de cada vez, tem-se Dn variando entre 1 e 10. Considerando as configurações texturais que podem ser conformadas nesse intervalo, tem-se ao todo 138 partições.
 
-Cada uma das 138 partições é passível de inúmeras distribuições manuais, resultando em uma grande quantidade de PMPs. Ao todo, são 1.125 PMPs, adotando as classes de distribuição como referência (CDMP). A lista dessas 1.125 PMPs é criada através da função pmpbuilder.m.
+Cada uma das 138 partições é passível de inúmeras distribuições manuais, resultando em uma grande quantidade de PMPs. Ao todo, são 1.125 PMPs, adotando as classes de distribuição como referência (CDMP). A lista dessas 1.125 PMPs é criada através da função pmpbuilder.m (o resultado editado dessa função pode ser observado em https://github.com/pdrmms/Textural-Pianistic-Analysis-Toolbox---TPA-Toolbox/blob/main/1226PMPs.csv).
 
 As 1.125 PMPs descritas com partições e em classes de distribuição manual pianísticas podem ser ainda descritas tanto de maneira mais genérica quanto de maneira mais detalhada. Seguindo a proposta dos _espaços texturais_ propostos por Daniel Moreira (2019), uma partição pode ser codificada de forma mais genérica como uma _classe textural_. Nessa maneira de descrição, são considerados apenas dois tipos de partes rítmicas: linhas (L, identificada como uma parte de um único componente), e blocos (B, identificada como uma parte de mais de um componente). Assumindo ainda que esses dois tipos de partes podem apresentar-se em também em multiplicidade (Lx e By), Moreira realiza a taxonomia exaustiva desse espaço textural, identificando 8 classes texturais possíveis (Moreira, 2019, p. 26:
 
@@ -41,11 +41,11 @@ Através da generalização possibilitada pelas classes texturais, é possível 
 
 ![image](https://github.com/pdrmms/Textural-Pianistic-Analysis-Toolbox---TPA-Toolbox/assets/144931330/500d0d87-77ed-446d-b3b6-ad10cf2c0828)
 
-A lista dessas 78 PMPs descritas em tc-space é construída através da função tcbuilderXY.m
+A lista dessas 78 PMPs descritas em tc-space é construída através da função tcbuilderXY.m (o resultado dessa função pode ser observado em https://github.com/pdrmms/Textural-Pianistic-Analysis-Toolbox---TPA-Toolbox/blob/main/78pmpsTC.csv).
 
 Por outro lado, as PMPs podem ser descritas de forma ainda mais detalhada. Isso se dá através da descrição textural rítmica situada na disposição dos componentes no espaço de alturas (registro) proposta por Moreira (2019). Aplicando as thread-words propostas por Moreira, chegamos aos chamados _finger-codes_, que são códigos que descrevem as relações texturais rítmicas entre componentes, e também sua disposição nos dedos específicos de cada mão. No finger-code aaxaa-xbaxc, por exemplo: os dedos 5, 4, 2 e 1 da mão esquerda dedicam-se à parte textural identificada pela pelo código _a_, enquanto o dedo 2 da mão direita dedica-se à realização da parte textural identificada pelo código _b_, enquanto o dedo 3 da mão direita dedica-se a _a_, e o dedo 5 dedica-se a _c_.
 
-Para uma única mão, identificou-se uma lista de 202 finger-codes possíveis, produzida pela função lhcode.m. Juntando as duas mãos, chega-se ao estonteante montante de 248.941 finger-codes, listados através da função lrmount.m.
+Para uma única mão, identificou-se uma lista de 202 finger-codes possíveis, produzida pela função lhcode.m. Juntando as duas mãos, chega-se ao estonteante montante de 248.941 finger-codes, listados através da função lrmount.m (o resultado dessa função pode ser observado em https://raw.githubusercontent.com/pdrmms/Textural-Pianistic-Analysis-Toolbox---TPA-Toolbox/main/248941fingercodes.csv?token=GHSAT0AAAAAACJCKNYDAXNT47WEHKSS6IE2ZJ4BXIQ).
 
 Referências
 
